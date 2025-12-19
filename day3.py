@@ -38,18 +38,18 @@ def find_max_bank_joltage_12(bank: str) -> int:
     return int(''.join([str(bank[i]) for i in opt_ind]))
 
 
-def tot_output_joltage(v=2):
+def tot_output_joltage(part="1"):
     seqs = read_input()
     joltages = []
     for bank in seqs:
-        if v == 2:
+        if part == "1":
             joltages.append(find_max_bank_joltage_2(bank))
-        if v == 12:
+        if part == "2":
             joltages.append(find_max_bank_joltage_12(bank))
     return sum(joltages)
 
 
 if __name__ == '__main__':
 
-    print(tot_output_joltage(v=12))
+    print(tot_output_joltage(part="2"))
 
