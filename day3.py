@@ -2,7 +2,7 @@ def read_input() -> list[str]:
     with open("input/day3_input.txt") as f:
         return [line.strip() for line in f.readlines()]
 
-def find_max_bank_joltage_2(bank: str) -> int:
+def find_max_bank_joltage_part1(bank: str) -> int:
     bank: list[int] = [int(char) for char in bank]
     a = bank[0]
     b = bank[1]
@@ -20,7 +20,7 @@ def find_max_bank_joltage_2(bank: str) -> int:
     return int(str(a) + str(b))
 
 
-def find_max_bank_joltage_12(bank: str) -> int:
+def find_max_bank_joltage_part2(bank: str) -> int:
     bank: list[int] = [int(char) for char in bank]
     opt_ind = list(range(1, len(bank)))[-12:]
 
@@ -43,9 +43,9 @@ def tot_output_joltage(part="1"):
     joltages = []
     for bank in seqs:
         if part == "1":
-            joltages.append(find_max_bank_joltage_2(bank))
+            joltages.append(find_max_bank_joltage_part1(bank))
         if part == "2":
-            joltages.append(find_max_bank_joltage_12(bank))
+            joltages.append(find_max_bank_joltage_part2(bank))
     return sum(joltages)
 
 
